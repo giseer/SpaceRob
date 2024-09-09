@@ -20,11 +20,10 @@ public class Player : MonoBehaviour
         nc = GetComponent<NewControls>();
         mvb = GetComponent<MovementBehaviour>();
     }
-
-    // Update is called once per frame
+    
     void Update()
     {
-        transform.Rotate(0, 0, nc.moveValue.x * speedRotation);
-        mvb.Move(nc.moveValue.y * transform.right);
+        transform.Rotate(0, 0, nc.moveValue.x * -speedRotation);
+        mvb.Move(nc.moveValue.y * transform.up);
     }
 }

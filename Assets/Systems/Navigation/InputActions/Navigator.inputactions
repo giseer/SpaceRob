@@ -1,0 +1,34 @@
+{
+    "name": "Navigator",
+    "maps": [
+        {
+            "name": "Navigator",
+            "id": "4d725367-0071-4e1d-9565-d7fc2166c00d",
+            "actions": [
+                {
+                    "name": "Skip",
+                    "type": "Button",
+                    "id": "8bfeb4c4-1a91-4d21-a5cd-fa58d1b508f6",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "63c51d78-33e7-4652-bd74-8f419f44c22e",
+                    "path": "<Mouse>/leftButton",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Skip",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        }
+    ],
+    "controlSchemes": []
+}

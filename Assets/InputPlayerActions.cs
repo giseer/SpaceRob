@@ -83,7 +83,7 @@ public partial class @InputPlayerActions : IInputActionCollection2, IDisposable
                 {
                     ""name"": ""up"",
                     ""id"": ""fea31304-291f-4aca-9a56-c51c058551cb"",
-                    ""path"": ""<XInputController>/rightTrigger"",
+                    ""path"": ""<Keyboard>/w"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
@@ -94,7 +94,7 @@ public partial class @InputPlayerActions : IInputActionCollection2, IDisposable
                 {
                     ""name"": ""down"",
                     ""id"": ""6d851770-6744-476c-bf33-03adee38704c"",
-                    ""path"": ""<XInputController>/leftTrigger"",
+                    ""path"": ""<Keyboard>/s"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
@@ -105,7 +105,7 @@ public partial class @InputPlayerActions : IInputActionCollection2, IDisposable
                 {
                     ""name"": ""left"",
                     ""id"": ""85aa0661-f9b7-4ecb-bced-8e9e60248690"",
-                    ""path"": ""<XInputController>/leftStick/right"",
+                    ""path"": ""<Keyboard>/a"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
@@ -116,7 +116,7 @@ public partial class @InputPlayerActions : IInputActionCollection2, IDisposable
                 {
                     ""name"": ""right"",
                     ""id"": ""9bca54f9-e633-4ad7-9c8c-5f35fd18eda0"",
-                    ""path"": ""<XInputController>/leftStick/left"",
+                    ""path"": ""<Keyboard>/d"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",

@@ -48,8 +48,6 @@ public class PowerUpsBehaviour : MonoBehaviour
 
     private void Update()
     {        
-        Debug.Log(speedAnterior);
-        Debug.Log(MB.speed);
         if(SB.x2 == 1)
         {
             time += Time.deltaTime;

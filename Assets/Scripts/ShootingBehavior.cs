@@ -24,13 +24,15 @@ public class ShootingBehavior : MonoBehaviour
     void SegundoDisparo()
     {
         GameObject bullet2 = Instantiate(bulletPrefab, transform.position, Quaternion.identity);
-        bullet2.GetComponent<Bullet>().SetDirection(transform.right);
+        bullet2.GetComponent<Bullet>().SetDirection(transform.up);
     }
 
     public void Shoot()
     {
         GameObject bullet = Instantiate(bulletPrefab, transform.position, Quaternion.identity);
-        bullet.GetComponent<Bullet>().SetDirection(transform.right);
+        bullet.GetComponent<Bullet>().SetDirection(transform.up);
+        
+        Destroy(bullet, 3f);
 
         if(x2 == 1)
         {
