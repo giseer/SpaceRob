@@ -13,12 +13,12 @@ GameObject:
   - component: {fileID: 7248850392747099136}
   - component: {fileID: 4910943022938953817}
   - component: {fileID: 4188353841883519878}
-  - component: {fileID: 4518294157363365592}
   - component: {fileID: 4375476488534805537}
   - component: {fileID: 1692790541014349845}
   - component: {fileID: 5799135926514856363}
   - component: {fileID: 1806377813353119333}
   - component: {fileID: 348354686604073702}
+  - component: {fileID: 2538468530038306055}
   m_Layer: 7
   m_Name: bullet
   m_TagString: Untagged
@@ -152,19 +152,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 30275149191215349a40e5f83a8782ab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &4518294157363365592
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3478113127219455768}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5ea45b30941e90d45b41e115e8e236b1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  speed: 10
 --- !u!114 &4375476488534805537
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -331,3 +318,16 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &2538468530038306055
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3478113127219455768}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ae326708dbc50484cb6f358c44476809, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 5

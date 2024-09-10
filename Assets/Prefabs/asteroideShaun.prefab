@@ -14,11 +14,11 @@ GameObject:
   - component: {fileID: 5311607250237478856}
   - component: {fileID: 2109526952649375562}
   - component: {fileID: 3630436464583575952}
-  - component: {fileID: 5243805183356497931}
   - component: {fileID: 8472623983575877470}
   - component: {fileID: 2966957108233178191}
   - component: {fileID: 50980268607966253}
   - component: {fileID: 732423037517144663}
+  - component: {fileID: 3977311327524286494}
   m_Layer: 6
   m_Name: asteroideShaun
   m_TagString: Untagged
@@ -155,19 +155,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 1
---- !u!114 &5243805183356497931
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1076648367199034854}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5ea45b30941e90d45b41e115e8e236b1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  speed: 2
 --- !u!114 &8472623983575877470
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -250,3 +237,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   score: 100
+--- !u!114 &3977311327524286494
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1076648367199034854}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ae326708dbc50484cb6f358c44476809, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 2

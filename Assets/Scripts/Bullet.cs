@@ -5,11 +5,11 @@ using UnityEngine;
 public class Bullet : MonoBehaviour
 {
     private Vector3 dir;
-    private MovementBehaviour mvb;
+    private IAMovement mvb;
     
     void Start()
     {
-        mvb= GetComponent<MovementBehaviour>();
+        mvb= GetComponent<IAMovement>();
     }
 
     public void SetDirection(Vector3 d)

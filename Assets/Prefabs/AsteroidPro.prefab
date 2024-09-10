@@ -14,11 +14,11 @@ GameObject:
   - component: {fileID: 7031855560381837858}
   - component: {fileID: 8624244143853112029}
   - component: {fileID: 228279835686996715}
-  - component: {fileID: 3394377039912482551}
   - component: {fileID: 7026855507332196385}
   - component: {fileID: 5353808136733631754}
   - component: {fileID: 425261210056419834}
   - component: {fileID: 1621567691184772348}
+  - component: {fileID: 4779353164237477493}
   m_Layer: 6
   m_Name: AsteroidPro
   m_TagString: Untagged
@@ -155,19 +155,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 2
---- !u!114 &3394377039912482551
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1387977080580068798}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5ea45b30941e90d45b41e115e8e236b1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  speed: 2
 --- !u!114 &7026855507332196385
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -250,3 +237,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   score: 0
+--- !u!114 &4779353164237477493
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1387977080580068798}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ae326708dbc50484cb6f358c44476809, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 1

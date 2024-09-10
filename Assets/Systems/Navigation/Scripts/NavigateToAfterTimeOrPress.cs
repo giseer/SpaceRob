@@ -23,7 +23,7 @@ public class NavigateToAfterTimeOrPress : MonoBehaviour
 
     private void Update()
     {
-        if (skip.action.WasPerformedThisFrame())
+        if (skip.action.WasPerformedThisFrame() && !alreadySkipped)
         {
             SkipScene();
         }
@@ -37,7 +37,7 @@ public class NavigateToAfterTimeOrPress : MonoBehaviour
     void SkipScene()
     {
         NavigateToNextScene();
-        Debug.Log("Scene Skipped");
+        alreadySkipped = true;
     }
 
     private void OnDisable()

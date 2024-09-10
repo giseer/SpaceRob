@@ -5,12 +5,12 @@ using UnityEngine;
 public class Asteroid : MonoBehaviour
 {
     private Vector3 dir;
-    private MovementBehaviour mvb;
+    private IAMovement mvb;
     // Start is called before the first frame update
 
     private void Start()
     {
-        mvb = GetComponent<MovementBehaviour>();
+        mvb = GetComponent<IAMovement>();
     }
     public void SetDirection(Vector3 d)
     {

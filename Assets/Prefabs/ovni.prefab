@@ -14,12 +14,12 @@ GameObject:
   - component: {fileID: 1269491947483028373}
   - component: {fileID: 4896428542012069354}
   - component: {fileID: 2579796587723484272}
-  - component: {fileID: -7577651449062040424}
   - component: {fileID: -622169913915924131}
   - component: {fileID: 5312893223809280051}
   - component: {fileID: 4994247994733643608}
   - component: {fileID: -4419527311588808008}
   - component: {fileID: 2614606430641410518}
+  - component: {fileID: 768865862180620340}
   m_Layer: 8
   m_Name: ovni
   m_TagString: Untagged
@@ -166,19 +166,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 1
---- !u!114 &-7577651449062040424
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1269491947483028372}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5ea45b30941e90d45b41e115e8e236b1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  speed: 4
 --- !u!114 &-622169913915924131
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -263,3 +250,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bulletPrefab: {fileID: 5396270188640398881, guid: 3863b90e529a6c54cba92ca2a21d5453, type: 3}
   delay: 2
+  x2: 0
+--- !u!114 &768865862180620340
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1269491947483028372}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ae326708dbc50484cb6f358c44476809, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 2

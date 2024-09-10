@@ -7,6 +7,8 @@ public class NavigateButton : MonoBehaviour
     [SerializeField] private string sceneToLoadName;
 
     private Button _button;
+
+    private bool alreadyPressed;
     
     private void Awake()
     {
@@ -20,7 +22,11 @@ public class NavigateButton : MonoBehaviour
 
     private void NavigateToSceneToLoad()
     {
-        NavigatorManager.LoadScene(sceneToLoadName);
+        if (!alreadyPressed)
+        {
+            NavigatorManager.LoadScene(sceneToLoadName);
+            alreadyPressed = true;
+        }
     }
     
     private void OnDisable()

@@ -30,20 +30,26 @@ public class PowerUpsBehaviour : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if(other.gameObject.layer == LayerMask.NameToLayer("X2"))
+        if (other.GetComponentInChildren<Boost>())
         {
-            SB.x2 = 1;
+            if(other.GetComponentInChildren<Boost>().type == BoostType.x2)
+            {
+                SB.x2 = 1;
+            }
+            else if(other.GetComponentInChildren<Boost>().type == BoostType.flash) // No entiendo el PowerUp, te he aumentado la velocidad de la nave
+            {
+                speedAnterior = MB.speed;
+                MB.speed *= 1.5f;
+            }
+            else if(other.GetComponentInChildren<Boost>().type == BoostType.invulnerability)
+            {
+                playCollider.enabled = false;            
+                GetComponent<Renderer>().material.color = Color.yellow;
+            }    
+            
+            other.GetComponent<Boost>().AnimateObtainBoost();
         }
-        else if(other.gameObject.layer == LayerMask.NameToLayer("Flash")) // No entiendo el PowerUp, te he aumentado la velocidad de la nave
-        {
-            speedAnterior = MB.speed;
-            MB.speed = 5;
-        }
-        else if(other.gameObject.layer == LayerMask.NameToLayer("Invul"))
-        {
-            playCollider.enabled = false;            
-            GetComponent<Renderer>().material.color = Color.yellow;
-        }
+        
     }
 
     private void Update()

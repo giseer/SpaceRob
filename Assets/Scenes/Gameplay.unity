@@ -1730,7 +1730,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1461837064}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 526.54254, y: 288.13675, z: 17.961248}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -1751,6 +1751,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pause: {fileID: -5075331156139577194, guid: 23d04a929fabe4045b36b84a4cff27de, type: 3}
+  ResumedGame:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &1476956616
 GameObject:
   m_ObjectHideFlags: 0
@@ -2554,7 +2557,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 31f614d866c10404c94af129242cd1df, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speedRotation: 0.5
+  rotationSpeed: 0
 --- !u!114 &1521669488
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2848,9 +2851,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a5d74282e7a15bd42b41f26d54348c54, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  SegundoDisparoPrefab: {fileID: 4365253702535298937, guid: 347d9a64a444aec4a918cfae879c61d1, type: 3}
-  MasFrecuenciaPrefab: {fileID: 5712647503062129636, guid: 1dfbf052d4be91248b15418ec2ff04ab, type: 3}
-  InvulnerabilidadPrefab: {fileID: 4792967122531184723, guid: 079b480521508804aa1b6c51df46cd76, type: 3}
+  SegundoDisparoPrefab: {fileID: 4755904668031409700, guid: 0abf77b673241d243a45d05c2db0b0be, type: 3}
+  MasFrecuenciaPrefab: {fileID: 3552706301812710708, guid: 4f8dea31b48ddf14a9bad925989c8072, type: 3}
+  InvulnerabilidadPrefab: {fileID: 6480248207093605129, guid: e90cc82e6b09de347a47d1e079bf2b18, type: 3}
   delay: 6
 --- !u!4 &1880461306
 Transform:

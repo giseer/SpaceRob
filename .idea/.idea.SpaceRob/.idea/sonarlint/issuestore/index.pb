@@ -19,3 +19,21 @@ L
 Assets/Menus/PauseManager.cs,1\f\1f434166269bc33f19a00021730f7c4eb7573487
 S
 #Assets/Scripts/PowerUpsBehaviour.cs,6\f\6fbe57535029be0492b92cb7903c184c0258635d
+\
+,Assets/Menus/SettingsMenu/SaverPlayerPref.cs,c\3\c36eaf21b6689cc21a7cdba03dc78f41f383d807
+f
+6Assets/Menus/SettingsMenu/SetterAndGetterPlayerPref.cs,f\8\f845823c8ff32476a7d9a20943bc2da181f8f266
+X
+(Assets/Menus/SettingsMenu/SliderSaver.cs,6\9\6988a46900048aa22b97b49c8642736ab46fbb04
+V
+&Assets/Menus/PauseMenu/PauseManager.cs,c\c\cccdaafce3f81e3a3a62bce065d4fe67066f96c6
+L
+Assets/Scripts/IAMovement.cs,1\d\1d46f7fb6db1d1332aba021ad06ed216980ef92d
+F
+Assets/Scripts/Ovni.cs,2\4\241d54e6b650268755ba24584c1d1ca16d8d4b8f
+J
+Assets/Scripts/Asteroid.cs,2\0\203f01c8b49eb6ca961496ecdb3b47937dacf745
+P
+ Assets/Boosters/Scripts/Boost.cs,1\1\111c63c695c26b7262ebf0f5e589f263c2d4b7a5
+Q
+!Assets/Scripts/PowerUpsSpawner.cs,8\2\82b0d45622dee90d02bb060374b0029ae2b95156
