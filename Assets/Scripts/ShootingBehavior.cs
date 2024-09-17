@@ -1,24 +1,25 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 public class ShootingBehavior : MonoBehaviour
 {
     public GameObject bulletPrefab;
-    private GameObject player;
+    private Ship player;
     
     public float delay;
     
     private float time;
     private Vector3 dir;
 
-    [HideInInspector] public int x2;
+    [HideInInspector] public bool doubleShootActivated;
 
     void Start()
     {
         time = 0;
-        player = GameObject.FindObjectOfType<Player>().gameObject;
-        x2 = 0;
+        player = FindObjectOfType<Ship>();
+        doubleShootActivated = false;
     }
 
     void SegundoDisparo()
@@ -34,7 +35,7 @@ public class ShootingBehavior : MonoBehaviour
         
         Destroy(bullet, 3f);
 
-        if(x2 == 1)
+        if(doubleShootActivated)
         {
             Invoke("SegundoDisparo", 0.2f);
         }

@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PowerUpsSpawner : MonoBehaviour
+public class BoostSpawner : MonoBehaviour
 {
     public GameObject SegundoDisparoPrefab;
     public GameObject MasFrecuenciaPrefab;

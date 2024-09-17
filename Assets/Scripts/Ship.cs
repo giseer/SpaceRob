@@ -1,10 +1,6 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.Serialization;
 
-public class Player : MonoBehaviour
+public class Ship : MonoBehaviour
 {
     public float rotationSpeed;
     private NewControls nc;    

@@ -11,7 +11,7 @@ public class SliderSaver : MonoBehaviour
     [SerializeField] private float minValue;
     [SerializeField] private float maxValue;
 
-    private void OnEnable()
+    protected void OnEnable()
     {
         slider.onValueChanged.AddListener(SaveSlider);
     }
@@ -39,7 +39,7 @@ public class SliderSaver : MonoBehaviour
         slider.value = PlayerPrefs.GetFloat(playerPrefName, minValue);
     }
 
-    private void OnDisable()
+    protected void OnDisable()
     {
         slider.onValueChanged.RemoveListener(SaveSlider);
     }
