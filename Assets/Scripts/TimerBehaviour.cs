@@ -1,20 +1,41 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
 public class TimerBehaviour : MonoBehaviour
 {
-    private float time;
-    private bool isStopped;
     public float initialTime;
     public bool countDown;
     public UnityEvent<float> OnTime;
     public UnityEvent OnTimeOut;
+    private bool isStopped;
+
+    private float time;
+
     // Start is called before the first frame update
-    void Start()
+    private void Start()
     {
         RestartTime();
+    }
+
+    // Update is called once per frame
+    private void Update()
+    {
+        if (!isStopped)
+        {
+            //time += Time.deltaTime;
+            if (countDown)
+            {
+                time -= Time.deltaTime;
+                if (time <= 0)
+                    OnTimeOut.Invoke();
+            }
+            else
+            {
+                time += Time.deltaTime;
+            }
+        }
+
+        OnTime.Invoke(time);
     }
 
     public void RestartTime()
@@ -27,27 +48,5 @@ public class TimerBehaviour : MonoBehaviour
     public void StopTime()
     {
         isStopped = true;
-    }    
-
-    // Update is called once per frame
-    void Update()
-    {
-        if(!isStopped)
-        {
-            //time += Time.deltaTime;
-            if (countDown)
-            {
-                time -= Time.deltaTime;
-                if (time <= 0)
-                    OnTimeOut.Invoke();
-
-            }
-            else
-            {
-                time += Time.deltaTime;
-            }
-        }
-
-        OnTime.Invoke(time); 
     }
 }

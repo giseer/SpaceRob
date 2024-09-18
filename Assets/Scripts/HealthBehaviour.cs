@@ -1,6 +1,3 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -12,7 +9,7 @@ public class HealthBehaviour : MonoBehaviour
     public bool invulnerable;
 
     public UnityEvent OnDie;
-    public UnityEvent< float> OnChangeHealth;
+    public UnityEvent<float> OnChangeHealth;
 
     private void Start()
     {
@@ -24,15 +21,12 @@ public class HealthBehaviour : MonoBehaviour
         currentHealth = maxHealth;
         OnChangeHealth.Invoke(currentHealth);
     }
+
     public void Heal(float health)
     {
         currentHealth += health;
-        if(currentHealth>maxHealth)
-        {
-            currentHealth = maxHealth;
-        }
+        if (currentHealth > maxHealth) currentHealth = maxHealth;
         OnChangeHealth.Invoke(currentHealth);
-
     }
 
     public void Hurt(float damage)
@@ -40,12 +34,13 @@ public class HealthBehaviour : MonoBehaviour
         if (!invulnerable)
         {
             currentHealth -= damage;
-            if(currentHealth<=0)
+            if (currentHealth <= 0)
             {
                 OnDie.Invoke();
                 currentHealth = 0;
             }
-            OnChangeHealth.Invoke(currentHealth);   
+
+            OnChangeHealth.Invoke(currentHealth);
         }
     }
 

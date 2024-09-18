@@ -1,12 +1,11 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+using System;
 using TMPro;
+using UnityEngine;
 
 public class TimeTextUpdater : MonoBehaviour
 {
-        public void SetTimeText(float time)
-        {
-            GetComponent<TMP_Text>().text = "Time: " + System.Math.Round(time, 1);
-        }
+    public void SetTimeText(float time)
+    {
+        GetComponent<TMP_Text>().text = "Time: " + Math.Round(time, 1);
+    }
 }

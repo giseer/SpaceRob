@@ -4,16 +4,16 @@ public class BoostFlash : Boost
 
     protected override void ApplyBoost()
     {
-            previousSpeed = lastShipHitted.GetComponentInChildren<MovementBehaviour>().speed;
+            previousSpeed = lastShipHitted.GetComponentInChildren<Mover>().speed;
 
-            lastShipHitted.GetComponentInChildren<MovementBehaviour>().speed *= 1.5f;
+            lastShipHitted.GetComponentInChildren<Mover>().speed *= 2f;
             
             base.ApplyBoost();
     }
 
     protected override void RemoveBoost()
     {
-        lastShipHitted.GetComponentInChildren<MovementBehaviour>().speed = previousSpeed;
+        lastShipHitted.GetComponentInChildren<Mover>().speed = previousSpeed;
         
         base.RemoveBoost();
     }

@@ -204,6 +204,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHealth: 1
   currentHealth: 0
+  invulnerable: 0
   OnDie:
     m_PersistentCalls:
       m_Calls:
@@ -231,7 +232,7 @@ AudioSource:
   m_GameObject: {fileID: 3478113127219455768}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: 5040783839557074158, guid: 83e21881c5de6e04192040d3e606403c, type: 2}
   m_audioClip: {fileID: 8300000, guid: 03b429c283392d548922abe5807a1b60, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 0.16
@@ -330,4 +331,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ae326708dbc50484cb6f358c44476809, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 5
+  speed: 7

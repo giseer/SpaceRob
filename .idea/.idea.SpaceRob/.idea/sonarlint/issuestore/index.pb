@@ -1,12 +1,6 @@
 
-S
-#Assets/Scripts/MovementBehaviour.cs,4\f\4f62eac7494ac673b224869a34f23a585450230c
-M
-Assets/Scripts/NewControls.cs,b\2\b236a90d3ec2e7ed1f907e4d803ff5ed26cca5da
 H
 Assets/Scripts/Bullet.cs,0\6\064be4b020de3808c0a7aadc9f3d13ec5902d1b1
-R
-"Assets/Scripts/ShootingBehavior.cs,b\b\bb9dec9e92dfee39c1d9026b16777531feb73d76
 e
 5Assets/Systems/Navigation/Scripts/NavigatorManager.cs,c\6\c6398d03a44cde4513e0d309322e2bb87cc39b45
 o
@@ -33,8 +27,6 @@ _
 /Assets/Boosters/Scripts/BoostInvulnerability.cs,3\5\35e555a9a3b930a005830c004a31e777076d0b4d
 [
 +Assets/Boosters/Scripts/BoostDoubleShoot.cs,b\e\be01acbfd6191d2a6705733fdd72181811cb84ea
-F
-Assets/Scripts/Ship.cs,4\8\48726ddeb546ea9eb8b78548536275f1bcba2e60
 X
 (Assets/Boosters/Scripts/BoostUIpdater.cs,0\8\08f9eeabed90b6b55df740d62e8665746034ac86
 Q
@@ -43,3 +35,17 @@ T
 $Assets/Audio/Scripts/AudioManager.cs,d\4\d4472d44b3be75abc2e0f20032754a7db9f1e8ab
 X
 (Assets/Audio/Scripts/AudioSliderSaver.cs,d\f\dfa51b1c65721c8390d41a7aed6d15e8b7508cbd
+R
+"Assets/Ship/Scripts/NewControls.cs,a\2\a2d440558874a9a33d3c90606efab772c38fec38
+K
+Assets/Ship/Scripts/Ship.cs,2\7\27017e6d9857700907ca346cba5cbf18f48cc3d4
+I
+Assets/Scripts/Shooter.cs,3\7\37bc3f7e65b330e37f50c9abb47e713e2f2727e6
+R
+"Assets/Ovni/Scripts/OvniShooter.cs,3\3\33905303109b5be2810233902de1042e7128dbce
+L
+Assets/Ship/Scripts/Mover.cs,c\d\cdb6593c62f16b1e944904bfa2809a296f650003
+Z
+*Assets/Scripts/AsteroidSpawnerBehaviour.cs,6\3\63bfd9dd5ce7eb8bb422b213e32ee92cc1191896
+Q
+!Assets/Scripts/AsteroidSpawner.cs,7\a\7a93010eb40d6f0bd28577c939ec3a73cd14b783

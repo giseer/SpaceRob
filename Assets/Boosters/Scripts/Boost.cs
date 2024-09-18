@@ -18,20 +18,20 @@ public class Boost : MonoBehaviour
     [HideInInspector] public float remainingTimeInSeconds;
 
     // Collision values
-
     protected Ship lastShipHitted;
-    protected bool boostActivated;
+    [HideInInspector] public bool boostActivated;
     
     // Abstract methods
     protected virtual void ApplyBoost()
     {
+        AnimateObtainBoost();
         Debug.Log("Boost applied");
         remainingTimeInSeconds = durationInSeconds;
         boostActivated = true;
         BoostUIpdater.Instance.activeBoost = this;
     }
 
-    protected virtual void RemoveBoost()
+    protected virtual void  RemoveBoost()
     {
         Debug.Log("Boost removed");
         boostActivated = false;
@@ -65,19 +65,20 @@ public class Boost : MonoBehaviour
     {
         if (boostActivated)
         {
+            remainingTimeInSeconds -= Time.deltaTime;
+            Debug.Log(remainingTimeInSeconds);
             if (remainingTimeInSeconds <= 0f)
             {
                 remainingTimeInSeconds = 0f;
+                Debug.Log("Need To Remove Boost");
                 RemoveBoost();
             }
-            
-            remainingTimeInSeconds -= Time.deltaTime;
         }
     }
     
     public void AnimateObtainBoost()
     {
         obtainedAnimation.Play();
-        Destroy(transform.parent.gameObject, (float)obtainedAnimation.duration);
+        Destroy(transform.parent.gameObject, durationInSeconds + 1f);
     }
 }

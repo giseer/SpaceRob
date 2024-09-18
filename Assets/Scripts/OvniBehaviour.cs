@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class OvniBehaviour : MonoBehaviour
@@ -11,22 +9,21 @@ public class OvniBehaviour : MonoBehaviour
     public int numSpawner;
 
     private GameObject spawnerActivo;
-    private float tiempoTranscurrido;
     private float tiempoEspera;
-    // Start is called before the first frame update
-    void Start()
-    {
 
+    private float tiempoTranscurrido;
+
+    // Start is called before the first frame update
+    private void Start()
+    {
     }
 
     // Update is called once per frame
-    void Update()
+    private void Update()
     {
-
         tiempoTranscurrido += Time.deltaTime;
         if (tiempoTranscurrido >= tiempoEspera)
         {
-
             if (Random.Range(0, 2) == 0)
             {
                 spawnerActivo = spawner1;
@@ -43,6 +40,5 @@ public class OvniBehaviour : MonoBehaviour
             spawner1.SetActive(spawnerActivo == spawner1);
             spawner2.SetActive(spawnerActivo == spawner2);
         }
-        
     }
 }

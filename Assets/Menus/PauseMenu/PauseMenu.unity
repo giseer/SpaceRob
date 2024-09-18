@@ -4165,7 +4165,7 @@ MonoBehaviour:
   slider: {fileID: 1835025873}
   playerPrefName: rotationSpeed
   minValue: 0
-  maxValue: 3
+  maxValue: 500
 --- !u!1 &1841200181
 GameObject:
   m_ObjectHideFlags: 0

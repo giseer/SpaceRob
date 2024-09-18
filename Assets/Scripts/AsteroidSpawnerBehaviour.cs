@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class AsteroidSpawnerBehaviour : MonoBehaviour
@@ -11,26 +9,22 @@ public class AsteroidSpawnerBehaviour : MonoBehaviour
     public int numSpawner;
 
     private GameObject spawnerActivo;
-    private float tiempoTranscurrido;
     private float tiempoEspera;
+
+    private float tiempoTranscurrido;
+
     // Start is called before the first frame update
-    void Start()
+    private void Start()
     {
         if (Random.Range(0, 2) == 0)
-        {
             spawnerActivo = spawner1;
-        }
         else
-        {
             spawnerActivo = spawner2;
-
-        }
     }
 
     // Update is called once per frame
-    void Update()
+    private void Update()
     {
-
         tiempoTranscurrido += Time.deltaTime;
         if (tiempoTranscurrido >= tiempoEspera)
         {
@@ -45,11 +39,11 @@ public class AsteroidSpawnerBehaviour : MonoBehaviour
                 spawnerActivo = spawner1;
                 numSpawner = 1;
             }
+
             tiempoTranscurrido = 0f;
             tiempoEspera = Random.Range(tiempoMinimo, tiempoMaximo);
             spawner1.SetActive(spawnerActivo == spawner1);
             spawner2.SetActive(spawnerActivo == spawner2);
         }
-
     }
 }

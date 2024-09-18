@@ -6,14 +6,14 @@ public class BoostDoubleShoot : Boost
 {
     protected override void ApplyBoost()
     {
-        lastShipHitted.GetComponentInChildren<ShootingBehavior>().doubleShootActivated = true;
+        lastShipHitted.GetComponentInChildren<Shooter>().doubleShootActivated = true;
         
         base.ApplyBoost();
     }
 
     protected override void RemoveBoost()
     {
-        lastShipHitted.GetComponentInChildren<ShootingBehavior>().doubleShootActivated = false;
+        lastShipHitted.GetComponentInChildren<Shooter>().doubleShootActivated = false;
         
         base.RemoveBoost();
     }
