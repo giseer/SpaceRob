@@ -49,3 +49,5 @@ Z
 *Assets/Scripts/AsteroidSpawnerBehaviour.cs,6\3\63bfd9dd5ce7eb8bb422b213e32ee92cc1191896
 Q
 !Assets/Scripts/AsteroidSpawner.cs,7\a\7a93010eb40d6f0bd28577c939ec3a73cd14b783
+Q
+!Assets/Scripts/TimeTextUpdater.cs,a\9\a9bb29d671b0ef28d05d648368b0500f13e171fe

@@ -17,7 +17,15 @@ public class PauseManager : MonoBehaviour
         else 
         { 
             Instance = this; 
-        } 
+        }
+
+        for (int i = 0; i < SceneManager.sceneCount; i++)
+        {
+            if (SceneManager.GetSceneAt(i).name == "PauseMenu")
+            {
+                NavigatorManager.UnloadScene("PauseMenu");
+            }
+        }
     }
     
     [SerializeField] private InputActionReference pause;

@@ -24,9 +24,15 @@ public class NavigateButton : MonoBehaviour
     {
         if (!alreadyPressed)
         {
+            ResumeGameTime();
             NavigatorManager.LoadScene(sceneToLoadName);
             alreadyPressed = true;
         }
+    }
+
+    private void ResumeGameTime()
+    {
+        Time.timeScale = 1f;
     }
     
     private void OnDisable()
