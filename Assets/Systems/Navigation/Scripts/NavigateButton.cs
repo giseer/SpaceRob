@@ -8,11 +8,15 @@ public class NavigateButton : MonoBehaviour
 
     private Button _button;
 
+    private Button[] allActiveButtons;
+
     private bool alreadyPressed;
     
     private void Awake()
     {
         _button = GetComponent<Button>();
+        
+        allActiveButtons = FindObjectsOfType<Button>();
     }
 
     private void OnEnable()
@@ -25,6 +29,9 @@ public class NavigateButton : MonoBehaviour
         if (!alreadyPressed)
         {
             ResumeGameTime();
+            
+            DesactiveActiveButtons();
+            
             NavigatorManager.LoadScene(sceneToLoadName);
             alreadyPressed = true;
         }
@@ -33,6 +40,14 @@ public class NavigateButton : MonoBehaviour
     private void ResumeGameTime()
     {
         Time.timeScale = 1f;
+    }
+    
+    private void DesactiveActiveButtons()
+    {
+        foreach (var activeButton in allActiveButtons)
+        {
+            activeButton.enabled = false;
+        }
     }
     
     private void OnDisable()

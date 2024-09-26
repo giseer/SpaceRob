@@ -258,6 +258,37 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 18771388}
   m_CullTransparentMesh: 1
+--- !u!1 &115890353
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 115890354}
+  m_Layer: 0
+  m_Name: OvniPoint2
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &115890354
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 115890353}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 10.07, y: 1.16, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1830745893}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &179056658
 GameObject:
   m_ObjectHideFlags: 0
@@ -451,7 +482,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 12
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &505694627
 GameObject:
@@ -586,53 +617,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &600179064
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 600179066}
-  - component: {fileID: 600179067}
-  m_Layer: 0
-  m_Name: OvniSpawner1
-  m_TagString: Untagged
-  m_Icon: {fileID: 5132851093641282708, guid: 0000000000000000d000000000000000, type: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &600179066
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 600179064}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -11.18, y: 3.78, z: -1.6863046}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 6
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &600179067
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 600179064}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7ffc089c9a7cf304f904533ca8bd93bb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  OvniPrefab: {fileID: 1269491947483028372, guid: 7d13e2945c3de7640bafd3de4a1b0b51, type: 3}
-  delay: 6
-  active: 0
 --- !u!1 &754215229
 GameObject:
   m_ObjectHideFlags: 0
@@ -729,7 +713,7 @@ RectTransform:
   - {fileID: 1137677983}
   - {fileID: 1110822382}
   m_Father: {fileID: 0}
-  m_RootOrder: 10
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -1062,7 +1046,7 @@ RectTransform:
   m_Children:
   - {fileID: 997415122}
   m_Father: {fileID: 0}
-  m_RootOrder: 15
+  m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -1196,6 +1180,37 @@ MonoBehaviour:
   delay: 5
   active: 0
   NumAsteroides: 10
+--- !u!1 &1019838693
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1019838694}
+  m_Layer: 0
+  m_Name: OvniPoint1
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1019838694
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1019838693}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -13.61, y: 1.16, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1830745893}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1054705958
 GameObject:
   m_ObjectHideFlags: 0
@@ -1341,7 +1356,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 600179067}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: OvniSpawner, Assembly-CSharp
         m_MethodName: StopSpawner
         m_Mode: 1
@@ -1353,7 +1368,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 1068028026}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: OvniSpawner, Assembly-CSharp
         m_MethodName: StopSpawner
         m_Mode: 1
@@ -1378,54 +1393,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 11
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1068028025
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1068028027}
-  - component: {fileID: 1068028026}
-  m_Layer: 0
-  m_Name: OvniSpawner2
-  m_TagString: Untagged
-  m_Icon: {fileID: 5132851093641282708, guid: 0000000000000000d000000000000000, type: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &1068028026
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1068028025}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7ffc089c9a7cf304f904533ca8bd93bb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  OvniPrefab: {fileID: 1269491947483028372, guid: 7d13e2945c3de7640bafd3de4a1b0b51, type: 3}
-  delay: 6
-  active: 1
---- !u!4 &1068028027
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1068028025}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 10.65, y: 3.78, z: -1.6863046}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1106065137
 GameObject:
@@ -1869,7 +1837,7 @@ RectTransform:
   - {fileID: 1483294660}
   - {fileID: 1722152450}
   m_Father: {fileID: 0}
-  m_RootOrder: 9
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -2021,6 +1989,51 @@ MonoBehaviour:
   delay: 2
   active: 0
   NumAsteroides: 50
+--- !u!1 &1416849266
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1416849268}
+  - component: {fileID: 1416849267}
+  m_Layer: 0
+  m_Name: AudioManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1416849267
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1416849266}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c607bbaf42fbd7346ae948d750205e0d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mainMixer: {fileID: 24100000, guid: 83e21881c5de6e04192040d3e606403c, type: 2}
+--- !u!4 &1416849268
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1416849266}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 5.2760835, y: 2.9798152, z: -1.6232274}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 15
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1461837064
 GameObject:
   m_ObjectHideFlags: 0
@@ -2051,7 +2064,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 14
+  m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1461837066
 MonoBehaviour:
@@ -2431,7 +2444,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
-      - m_Target: {fileID: 600179067}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: OvniSpawner, Assembly-CSharp
         m_MethodName: StartSpawner
         m_Mode: 1
@@ -2443,7 +2456,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
-      - m_Target: {fileID: 1068028026}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: OvniSpawner, Assembly-CSharp
         m_MethodName: StartSpawner
         m_Mode: 1
@@ -2541,7 +2554,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 13
+  m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1531656037
 MonoBehaviour:
@@ -2750,7 +2763,9 @@ Transform:
   m_LocalPosition: {x: 1.3856671, y: 2.920469, z: -1.5874164}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 1019838694}
+  - {fileID: 115890354}
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -2763,14 +2778,16 @@ MonoBehaviour:
   m_GameObject: {fileID: 1830745891}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9b62a03d441c8494e92eb83a6b2bcfeb, type: 3}
+  m_Script: {fileID: 11500000, guid: 7ffc089c9a7cf304f904533ca8bd93bb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spawner1: {fileID: 600179064}
-  spawner2: {fileID: 1068028025}
-  tiempoMinimo: 6
-  tiempoMaximo: 6
-  numSpawner: 0
+  OvniPrefab: {fileID: 4896428542012069354, guid: 7d13e2945c3de7640bafd3de4a1b0b51, type: 3}
+  points:
+  - spawnPoint: {fileID: 1019838694}
+    direction: 1
+  - spawnPoint: {fileID: 115890354}
+    direction: 0
+  spawnRate: 10
 --- !u!1 &1880461304
 GameObject:
   m_ObjectHideFlags: 0
@@ -2818,7 +2835,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1897369867
 GameObject:
@@ -2915,7 +2932,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 16
+  m_RootOrder: 14
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1972099632
 GameObject:
@@ -3192,6 +3209,14 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9007976239793587446, guid: cc6b499bc4cb8014392b3bd7680718f7, type: 3}
+      propertyPath: blinkTotalTime
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9007976239793587446, guid: cc6b499bc4cb8014392b3bd7680718f7, type: 3}
+      propertyPath: delayBetweenBlinks
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9007976239793587446, guid: cc6b499bc4cb8014392b3bd7680718f7, type: 3}
       propertyPath: OnDie.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
       objectReference: {fileID: 1368422903}
@@ -3226,11 +3251,11 @@ PrefabInstance:
     - target: {fileID: 9007976239793587446, guid: cc6b499bc4cb8014392b3bd7680718f7, type: 3}
       propertyPath: OnDie.m_PersistentCalls.m_Calls.Array.data[10].m_Target
       value: 
-      objectReference: {fileID: 600179067}
+      objectReference: {fileID: 0}
     - target: {fileID: 9007976239793587446, guid: cc6b499bc4cb8014392b3bd7680718f7, type: 3}
       propertyPath: OnDie.m_PersistentCalls.m_Calls.Array.data[11].m_Target
       value: 
-      objectReference: {fileID: 1068028026}
+      objectReference: {fileID: 0}
     - target: {fileID: 9007976239793587446, guid: cc6b499bc4cb8014392b3bd7680718f7, type: 3}
       propertyPath: OnDie.m_PersistentCalls.m_Calls.Array.data[12].m_Target
       value: 

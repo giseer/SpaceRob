@@ -1,21 +1,21 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.Serialization;
 
 public class OvniShooter : MonoBehaviour
 {
+    [Header("Target Values")]
     [SerializeField] private Ship ship;
+    
+    [Header("Ammo Values")]
     [SerializeField] private GameObject bulletPrefab;
     
-    private float time;
+    [Header("Timer Values")]
+    [SerializeField] private float fireRate;
+    private float remainingTimeToShoot;
     
-    private float timeBetweenShots;
-
     private void Start()
     {
-        time = 0;
+        ship = FindObjectOfType<Ship>();
+        remainingTimeToShoot = fireRate;
     }
 
     void Update()
@@ -26,12 +26,12 @@ public class OvniShooter : MonoBehaviour
     private void Shoot()
     {
         Vector3 dir = ship.transform.position - transform.position;
-        time += Time.deltaTime;
-        if (time > timeBetweenShots)
+        remainingTimeToShoot -= Time.deltaTime;
+        if (remainingTimeToShoot <= 0)
         {
+            remainingTimeToShoot = fireRate;
             GameObject bullet = Instantiate(bulletPrefab, transform.position, Quaternion.identity);
             bullet.GetComponentInChildren<Bullet>().SetDirection(dir);
-            time = 0;
         }
     } 
 }

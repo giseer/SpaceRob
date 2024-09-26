@@ -1,69 +1,69 @@
+using System;
+using System.Collections.Generic;
 using UnityEngine;
+
+[Serializable]
+public class OvniPoint
+{
+    public enum spawnDirection
+    {
+        Left,
+        Right
+    }
+    
+    [SerializeField] public Transform spawnPoint;
+    [SerializeField] public spawnDirection direction;
+}
 
 public class OvniSpawner : MonoBehaviour
 {
-    public GameObject OvniPrefab;
-    public float delay;
-    public bool active;
+    [SerializeField] private Ovni OvniPrefab;
+    
+    [SerializeField] private List<OvniPoint> points;
 
-    private int numSpawner;
-    private OvniBehaviour ovr;
+    private Ovni lastOvniSpawned;
+    
+    private OvniPoint decidedPoint;
+    
+    //Timer Values
 
-    private float time;
+    [SerializeField] private float spawnRate;
 
-    // Start is called before the first frame update
+    private float remainingTimeToSpawn;
+
     private void Start()
     {
-        time = 0;
-        active = true;
-        ovr = GameObject.Find("OvniSpawnerManager").GetComponent<OvniBehaviour>();
+        remainingTimeToSpawn = spawnRate;
     }
 
-    // Update is called once per frame
     private void Update()
     {
-        numSpawner = ovr.numSpawner;
-        if (numSpawner == 1)
+        remainingTimeToSpawn -= Time.deltaTime;
+        if (remainingTimeToSpawn <= 0)
         {
-            if (active)
-            {
-                Vector3 dir;
-                time += Time.deltaTime;
-                if (time > delay)
-                {
-                    var ovni = Instantiate(OvniPrefab, transform.position, Quaternion.identity);
-                    Destroy(ovni, 6f);
-                    dir = new Vector3(1.0f, 0, 0);
-                    ovni.GetComponent<Ovni>().SetDirection(dir);
-                    time = 0;
-                }
-            }
-        }
-        else if (numSpawner == 2)
-        {
-            if (active)
-            {
-                Vector3 dir;
-                time += Time.deltaTime;
-                if (time > delay)
-                {
-                    var ovni = Instantiate(OvniPrefab, transform.position, Quaternion.identity);
-                    Destroy(ovni, 6f);
-                    dir = new Vector3(-1.0f, 0, 0);
-                    ovni.GetComponent<Ovni>().SetDirection(dir);
-                    time = 0;
-                }
-            }
+            remainingTimeToSpawn = spawnRate;
+            SpawnOvni();
         }
     }
 
-    public void StopSpawner()
+    private void SpawnOvni()
     {
-        active = false;
+        lastOvniSpawned = Instantiate(OvniPrefab, DecideSpawnPointPosition(), Quaternion.identity, transform);
+
+        if (decidedPoint.direction == OvniPoint.spawnDirection.Left)
+        {
+            lastOvniSpawned.dir = Vector3.left;
+        }
+        else if (decidedPoint.direction == OvniPoint.spawnDirection.Right)
+        {
+            lastOvniSpawned.dir = Vector3.right;
+        }
     }
 
-    public void StartSpawner()
+    private Vector3 DecideSpawnPointPosition()
     {
-        active = true;
+        var randomIndex = UnityEngine.Random.Range(0, points.Count);
+        decidedPoint = points[randomIndex]; 
+        return decidedPoint.spawnPoint.position;
     }
 }

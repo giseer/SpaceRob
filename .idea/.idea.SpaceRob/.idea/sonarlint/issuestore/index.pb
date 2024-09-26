@@ -51,3 +51,11 @@ Q
 !Assets/Scripts/AsteroidSpawner.cs,7\a\7a93010eb40d6f0bd28577c939ec3a73cd14b783
 Q
 !Assets/Scripts/TimeTextUpdater.cs,a\9\a9bb29d671b0ef28d05d648368b0500f13e171fe
+\
+,Assets/Systems/Navigation/Scripts/ExitBtn.cs,1\5\15ce103fac39e31fb614e04cdfd0cae21c1f9da5
+O
+Assets/Scripts/OvniBehaviour.cs,6\1\61e2dbdaed924c908363eaa77d56c493f6ea6290
+M
+Assets/Scripts/OvniSpawner.cs,3\e\3e6c5cd0245f7b04e7704c7a07c450948789a284
+V
+&Assets/Scripts/OvniSpawnerBehaviour.cs,a\f\afbeb87a6985eb9374324299bb671001e594f5d1
