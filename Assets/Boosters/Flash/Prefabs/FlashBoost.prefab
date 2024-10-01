@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3552706301812710711}
   - component: {fileID: 3552706301812710710}
+  - component: {fileID: 44896139222707258}
   m_Layer: 12
   m_Name: FlashBoost
   m_TagString: Untagged
@@ -42,7 +43,7 @@ PlayableDirector:
   m_GameObject: {fileID: 3552706301812710708}
   m_Enabled: 1
   serializedVersion: 3
-  m_PlayableAsset: {fileID: 11400000, guid: a8b8c46c139c104408aa9312871fa960, type: 2}
+  m_PlayableAsset: {fileID: 11400000, guid: 5cd15f449a7e52243af9fac18305ff24, type: 2}
   m_InitialState: 0
   m_WrapMode: 2
   m_DirectorUpdateMode: 1
@@ -52,8 +53,108 @@ PlayableDirector:
     value: {fileID: 0}
   - key: {fileID: -224744083343169909, guid: a8b8c46c139c104408aa9312871fa960, type: 2}
     value: {fileID: 930258427317902332}
+  - key: {fileID: 7313146238855440175, guid: 5cd15f449a7e52243af9fac18305ff24, type: 2}
+    value: {fileID: 44896139222707258}
+  - key: {fileID: -5979464404048814767, guid: 5cd15f449a7e52243af9fac18305ff24, type: 2}
+    value: {fileID: 0}
   m_ExposedReferences:
     m_References: []
+--- !u!82 &44896139222707258
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3552706301812710708}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 5040783839557074158, guid: 83e21881c5de6e04192040d3e606403c, type: 2}
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1 &9082310388117631895
 GameObject:
   m_ObjectHideFlags: 0
@@ -225,3 +326,6 @@ MonoBehaviour:
   durationInSeconds: 5
   remainingTimeInSeconds: 0
   boostActivated: 0
+  playableDirector: {fileID: 3552706301812710710}
+  boostObtainedClip: {fileID: 11400000, guid: a8b8c46c139c104408aa9312871fa960, type: 2}
+  boostSpawnedClip: {fileID: 11400000, guid: 917da95742b57f54f8c7101f4b13abf8, type: 2}

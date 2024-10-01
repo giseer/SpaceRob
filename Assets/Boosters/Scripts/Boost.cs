@@ -1,27 +1,48 @@
 using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Playables;
-using UnityEngine.Serialization;
-using UnityEngine.Timeline;
-using UnityEngine.UIElements;
 
 public class Boost : MonoBehaviour
 {
-    // Art Values
+    [Header("Art Values")] 
     public Sprite boostSprite;
-    private PlayableDirector obtainedAnimation;
-    
-    // Timer Values
-    [SerializeField] private float durationInSeconds;
-    [HideInInspector] public float remainingTimeInSeconds;
 
-    // Collision values
-    protected Ship lastShipHitted;
+    [Header("Timer Values")] 
+    [SerializeField] private float durationInSeconds;
+
+    [HideInInspector] public float remainingTimeInSeconds;
     [HideInInspector] public bool boostActivated;
-    
-    // Abstract methods
+
+    [Header("Collision values")] protected Ship lastShipHitted;
+
+    [Header("TimeLines Values")]
+    [SerializeField] private PlayableDirector playableDirector;
+    [SerializeField] private PlayableAsset boostObtainedClip;
+    [SerializeField] private PlayableAsset boostSpawnedClip;
+
+    private void Awake()
+    {
+        playableDirector = GetComponentInParent<PlayableDirector>();
+        playableDirector.playableAsset = boostSpawnedClip;
+        playableDirector.Play();
+    }
+
+    private void Update()
+    {
+        CountdownTimer();
+    }
+
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.GetComponentInChildren<Ship>())
+        {
+            lastShipHitted = other.GetComponentInChildren<Ship>();
+
+            if (boostActivated == false) ApplyBoost();
+        }
+    }
+
+    //Abstract Methods
     protected virtual void ApplyBoost()
     {
         AnimateObtainBoost();
@@ -31,34 +52,11 @@ public class Boost : MonoBehaviour
         BoostUIpdater.Instance.activeBoost = this;
     }
 
-    protected virtual void  RemoveBoost()
+    protected virtual void RemoveBoost()
     {
         Debug.Log("Boost removed");
         boostActivated = false;
         BoostUIpdater.Instance.activeBoost = null;
-    }
-    
-    private void Start()
-    {
-        obtainedAnimation = GetComponentInParent<PlayableDirector>();
-    }
-
-    private void OnTriggerEnter2D(Collider2D other)
-    {
-        if (other.GetComponentInChildren<Ship>())
-        {
-            lastShipHitted = other.GetComponentInChildren<Ship>();
-            
-            if (boostActivated == false)
-            {
-                ApplyBoost();   
-            }
-        }
-    }
-    
-    private void Update()
-    {
-        CountdownTimer();
     }
 
     private void CountdownTimer()
@@ -75,10 +73,11 @@ public class Boost : MonoBehaviour
             }
         }
     }
-    
+
     public void AnimateObtainBoost()
     {
-        obtainedAnimation.Play();
+        playableDirector.playableAsset = boostObtainedClip;
+        playableDirector.Play();
         Destroy(transform.parent.gameObject, durationInSeconds + 1f);
     }
 }

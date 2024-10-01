@@ -29,12 +29,10 @@ public class AudioSliderSaver : SliderSaver
     {
         if (type == AudioType.Music)
         { 
-            Debug.Log("ChangingMusicValues...");
             AudioManager.Instance.SetMusicVolume(value);
         }
         else if (type == AudioType.SFX)
         {
-            Debug.Log("ChangingSfxValues...");
             AudioManager.Instance.SetSFXVolume(value);
         }
     }

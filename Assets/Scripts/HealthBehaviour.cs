@@ -102,9 +102,4 @@ public class HealthBehaviour : MonoBehaviour
             yield return null;
         }
     }
-
-    public float GetHealth()
-    {
-        return currentHealth;
-    }
 }
