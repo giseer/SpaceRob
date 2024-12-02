@@ -225,6 +225,8 @@ MonoBehaviour:
   OnChangeHealth:
     m_PersistentCalls:
       m_Calls: []
+  delayBetweenBlinks: 0
+  blinkTotalTime: 0
 --- !u!114 &1621567691184772348
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -237,7 +239,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c70cd0c7fe732a34cabc8f6cbfa24089, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  score: 0
+  score: 200
 --- !u!114 &4779353164237477493
 MonoBehaviour:
   m_ObjectHideFlags: 0

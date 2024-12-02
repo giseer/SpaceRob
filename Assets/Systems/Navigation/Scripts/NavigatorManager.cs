@@ -7,6 +7,9 @@ public class NavigatorManager : MonoBehaviour
 {
     private static NavigatorManager _instance;
 
+    [Header("Time Values")] 
+    [SerializeField] private float fadeDuration = 1f;
+    
     [SerializeField] private string firstSceneToLoad;
     private CanvasGroup _canvasGroup;
     private Scene _lastLoadedScene;
@@ -50,12 +53,12 @@ public class NavigatorManager : MonoBehaviour
     {
         if(_lastLoadedScene.isLoaded)
         {
-            Tween fadeOut = _canvasGroup.DOFade(1f, 3f);
+            Tween fadeOut = _canvasGroup.DOFade(1f, fadeDuration/2);
             while (!fadeOut.playedOnce)
             {
                 yield return null;
             }
-            yield return new WaitForSeconds(3f);
+            yield return new WaitForSeconds(fadeDuration/2);
             
             AsyncOperation unloadOperation = SceneManager.UnloadSceneAsync(_lastLoadedScene);
             while (!unloadOperation.isDone)
@@ -74,12 +77,12 @@ public class NavigatorManager : MonoBehaviour
 
         _lastLoadedScene = SceneManager.GetSceneByName(sceneName);
         
-        Tween fadeIn = _canvasGroup.DOFade(0f, 3f);
+        Tween fadeIn = _canvasGroup.DOFade(0f, fadeDuration/2);
         
         while (!fadeIn.playedOnce)
         {
             yield return null;
         }
-        yield return new WaitForSeconds(3f);
+        yield return new WaitForSeconds(fadeDuration/2);
     }
 }

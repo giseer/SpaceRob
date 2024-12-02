@@ -374,6 +374,8 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  delayBetweenBlinks: 0
+  blinkTotalTime: 0
 --- !u!82 &9007976239793587439
 AudioSource:
   m_ObjectHideFlags: 0
@@ -508,6 +510,7 @@ MonoBehaviour:
   onShoot:
     m_PersistentCalls:
       m_Calls: []
+  joystick: {fileID: 0}
 --- !u!114 &9007976239793587436
 MonoBehaviour:
   m_ObjectHideFlags: 0
