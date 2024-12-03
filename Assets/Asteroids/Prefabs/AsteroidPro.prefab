@@ -155,6 +155,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 2
+  layersToDamage:
+  - Player
 --- !u!114 &7026855507332196385
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -198,9 +200,9 @@ MonoBehaviour:
   OnDie:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 5353808136733631754}
-        m_TargetAssemblyTypeName: DestroyBehavior, Assembly-CSharp
-        m_MethodName: DestroyObject
+      - m_Target: {fileID: 1621567691184772348}
+        m_TargetAssemblyTypeName: ScoreUpdater, Assembly-CSharp
+        m_MethodName: UpdateScore
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -210,9 +212,9 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 1621567691184772348}
-        m_TargetAssemblyTypeName: ScoreUpdater, Assembly-CSharp
-        m_MethodName: UpdateScore
+      - m_Target: {fileID: 5353808136733631754}
+        m_TargetAssemblyTypeName: DestroyBehavior, Assembly-CSharp
+        m_MethodName: DestroyObject
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

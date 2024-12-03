@@ -165,6 +165,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 1
+  layersToDamage:
+  - Asteroid
+  - Ovni
 --- !u!114 &1692790541014349845
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -223,6 +226,8 @@ MonoBehaviour:
   OnChangeHealth:
     m_PersistentCalls:
       m_Calls: []
+  delayBetweenBlinks: 0
+  blinkTotalTime: 0
 --- !u!82 &348354686604073702
 AudioSource:
   m_ObjectHideFlags: 0

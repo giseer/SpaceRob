@@ -80,7 +80,6 @@ public class HealthBehaviour : MonoBehaviour
     {
         canBlink = true;
         remainingTimeOfBlink = blinkTotalTime;
-        Debug.Log("Starting to Blink");
         StartCoroutine(BlinkCourutine(blinkColor));
     }
 
@@ -91,7 +90,6 @@ public class HealthBehaviour : MonoBehaviour
         {
             for (int i = 0; i <= Mathf.FloorToInt(blinkTotalTime / delayBetweenBlinks) + 1; i++)
             {
-                Debug.Log("Changing color");
                 renderer.color = renderer.color == Color.white ? blinkColor : Color.white;
 
                 yield return new WaitForSeconds(delayBetweenBlinks);

@@ -1,12 +1,21 @@
+using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 public class DamageBehaviour : MonoBehaviour
 {
-    public float damage;
+    [SerializeField] private float damage;
+    
+    [SerializeField] private List<string> layersToDamage;
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        collision.gameObject.GetComponent<HealthBehaviour>().Hurt(damage);
-        //Destroy(collision.gameObject);
+        foreach (string layerToDamage in layersToDamage)
+        {
+            if (collision.gameObject.layer == LayerMask.NameToLayer(layerToDamage))  
+            {
+                collision.gameObject.GetComponent<HealthBehaviour>().Hurt(damage);   
+            }    
+        }
     }
 }

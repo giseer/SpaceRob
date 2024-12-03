@@ -165,6 +165,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 1
+  layersToDamage:
+  - Player
 --- !u!114 &7630359119469046309
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -223,6 +225,8 @@ MonoBehaviour:
   OnChangeHealth:
     m_PersistentCalls:
       m_Calls: []
+  delayBetweenBlinks: 0
+  blinkTotalTime: 0
 --- !u!82 &1254577685225557982
 AudioSource:
   m_ObjectHideFlags: 0
