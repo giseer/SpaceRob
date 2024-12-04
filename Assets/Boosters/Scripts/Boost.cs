@@ -46,7 +46,6 @@ public class Boost : MonoBehaviour
     protected virtual void ApplyBoost()
     {
         AnimateObtainBoost();
-        Debug.Log("Boost applied");
         remainingTimeInSeconds = durationInSeconds;
         boostActivated = true;
         BoostUIpdater.Instance.activeBoost = this;
@@ -54,7 +53,6 @@ public class Boost : MonoBehaviour
 
     protected virtual void RemoveBoost()
     {
-        Debug.Log("Boost removed");
         boostActivated = false;
         BoostUIpdater.Instance.activeBoost = null;
     }
@@ -64,11 +62,9 @@ public class Boost : MonoBehaviour
         if (boostActivated)
         {
             remainingTimeInSeconds -= Time.deltaTime;
-            Debug.Log(remainingTimeInSeconds);
             if (remainingTimeInSeconds <= 0f)
             {
                 remainingTimeInSeconds = 0f;
-                Debug.Log("Need To Remove Boost");
                 RemoveBoost();
             }
         }

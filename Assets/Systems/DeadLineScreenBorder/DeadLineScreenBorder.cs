@@ -22,12 +22,29 @@ public class DeadLineScreenBorder : MonoBehaviour
             Debug.LogError("Camera.main is null");
             return;    
         }
+
+        Camera mainCamera = Camera.main;
         
-        Vector2 topLeft = Camera.main.ViewportToWorldPoint(new Vector2(0, 1));
+        Vector2 topLeft = mainCamera.ViewportToWorldPoint(new Vector2(0, 1));
+        Vector2 bottomRight = mainCamera.ViewportToWorldPoint(new Vector2(1, 0));
         
-        boxCollider.size = new Vector2(Screen.width, Screen.height);
-        boxCollider.transform.position = new Vector2(topLeft.x + deadLineBorderOffsetFromScreen/2, topLeft.y + deadLineBorderOffsetFromScreen/2);
+        boxCollider.size = new Vector2(
+            (bottomRight.x - topLeft.x) + deadLineBorderOffsetFromScreen,
+            (topLeft.y - bottomRight.y)+ deadLineBorderOffsetFromScreen);
+        
     }
-    
-    
+
+    public void CleanEnemiesOnScreen()
+    {
+        boxCollider.enabled = false;
+        boxCollider.enabled = true;
+    }
+
+    private void OnTriggerExit2D(Collider2D other)
+    {
+        if (!other.CompareTag("Boost") && !other.CompareTag("player"))
+        {
+            Destroy(other.gameObject);
+        }
+    }
 }

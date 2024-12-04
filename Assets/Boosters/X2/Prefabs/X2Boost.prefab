@@ -11,9 +11,9 @@ GameObject:
   - component: {fileID: 4755904668031409703}
   - component: {fileID: 4755904668031409702}
   - component: {fileID: 1240921871}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: X2Boost
-  m_TagString: Untagged
+  m_TagString: Boost
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -169,7 +169,7 @@ GameObject:
   - component: {fileID: 2788333843371483738}
   m_Layer: 11
   m_Name: X2
-  m_TagString: Untagged
+  m_TagString: Boost
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

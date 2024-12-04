@@ -3,7 +3,9 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - Boost
+  - player
   layers:
   - Default
   - TransparentFX
@@ -16,9 +18,9 @@ TagManager:
   - Ovni
   - Player
   - OvniBullet
-  - X2
-  - Flash
-  - Invul
+  - Boost
+  - 
+  - 
   - 
   - 
   - 

@@ -11,9 +11,9 @@ GameObject:
   - component: {fileID: 3552706301812710711}
   - component: {fileID: 3552706301812710710}
   - component: {fileID: 44896139222707258}
-  m_Layer: 12
+  m_Layer: 11
   m_Name: FlashBoost
-  m_TagString: Untagged
+  m_TagString: Boost
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -169,9 +169,9 @@ GameObject:
   - component: {fileID: 2800333454995348076}
   - component: {fileID: 930258427317902332}
   - component: {fileID: 8785160296161108600}
-  m_Layer: 12
+  m_Layer: 11
   m_Name: flash
-  m_TagString: Untagged
+  m_TagString: Boost
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
