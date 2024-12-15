@@ -358,7 +358,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: GISEER ENTERTAIMENT
+  m_text: GISEER GAMES
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 5c9433ea439f8074faf0b30d68c35538, type: 2}
   m_sharedMaterial: {fileID: -4912708556679206191, guid: 5c9433ea439f8074faf0b30d68c35538, type: 2}

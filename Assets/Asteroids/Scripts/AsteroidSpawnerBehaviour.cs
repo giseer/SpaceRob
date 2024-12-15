@@ -1,49 +1,53 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 public class AsteroidSpawnerBehaviour : MonoBehaviour
 {
-    public GameObject spawner1;
-    public GameObject spawner2;
+    private List<AsteroidSpawner> spawners = new List<AsteroidSpawner>();
+    private int activeSpawnerIndex;
+    
+    [Header("Time Values")]
     public float tiempoMinimo = 1f;
     public float tiempoMaximo = 5f;
-    public int numSpawner;
-
-    private GameObject spawnerActivo;
+    
     private float tiempoEspera;
-
     private float tiempoTranscurrido;
 
-    // Start is called before the first frame update
-    private void Start()
+    private void Awake()
     {
-        if (Random.Range(0, 2) == 0)
-            spawnerActivo = spawner1;
-        else
-            spawnerActivo = spawner2;
+        spawners = GetComponentsInChildren<AsteroidSpawner>(true).ToList();
     }
 
-    // Update is called once per frame
+    private void Start()
+    {
+        tiempoTranscurrido = tiempoEspera;
+    }
+
+    private AsteroidSpawner ChooseRandomSpawner()
+    {
+        int newActiveSpawnerIndex;
+        
+        do
+        {
+            newActiveSpawnerIndex = Random.Range(0, spawners.Count);    
+        } while (newActiveSpawnerIndex == activeSpawnerIndex);
+        
+        return spawners[activeSpawnerIndex];   
+    }
+
     private void Update()
     {
-        tiempoTranscurrido += Time.deltaTime;
         if (tiempoTranscurrido >= tiempoEspera)
         {
-            // Cambia el objeto activo al azar
-            if (spawnerActivo == spawner1)
-            {
-                spawnerActivo = spawner2;
-                numSpawner = 2;
-            }
-            else
-            {
-                spawnerActivo = spawner1;
-                numSpawner = 1;
-            }
-
             tiempoTranscurrido = 0f;
             tiempoEspera = Random.Range(tiempoMinimo, tiempoMaximo);
-            spawner1.SetActive(spawnerActivo == spawner1);
-            spawner2.SetActive(spawnerActivo == spawner2);
+            
+            ChooseRandomSpawner().gameObject.SetActive(true);
         }
+        
+        tiempoTranscurrido += Time.deltaTime;
     }
 }

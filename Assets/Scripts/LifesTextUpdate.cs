@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class LifesTextUpdate : MonoBehaviour
 {
-    public void SetLifesText(float lifes)
+    public void SetLifesText(int lifes)
     {
         GetComponent<TMP_Text>().text = "Lifes: " + lifes;
     }

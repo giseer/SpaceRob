@@ -6,13 +6,13 @@ using UnityEngine.Events;
 
 public class HealthBehaviour : MonoBehaviour
 {
-    public float maxHealth;
-    public float currentHealth;
+    public int maxHealth;
+    public int currentHealth;
 
     public bool invulnerable;
 
     public UnityEvent OnDie;
-    public UnityEvent<float> OnChangeHealth;
+    public UnityEvent<int> OnChangeHealth;
 
     [Header("Components")] 
     private SpriteRenderer renderer;
@@ -41,6 +41,7 @@ public class HealthBehaviour : MonoBehaviour
             if (remainingTimeOfBlink <= 0)
             {
                 canBlink = false;
+                invulnerable = false;
             }
         }
     }
@@ -51,14 +52,14 @@ public class HealthBehaviour : MonoBehaviour
         OnChangeHealth.Invoke(currentHealth);
     }
 
-    public void Heal(float health)
+    public void Heal(int health)
     {
         currentHealth += health;
         if (currentHealth > maxHealth) currentHealth = maxHealth;
         OnChangeHealth.Invoke(currentHealth);
     }
 
-    public void Hurt(float damage)
+    public void Hurt(int damage)
     {
         if (!invulnerable)
         {
@@ -79,6 +80,7 @@ public class HealthBehaviour : MonoBehaviour
     private void Blink(Color blinkColor)
     {
         canBlink = true;
+        invulnerable = true;
         remainingTimeOfBlink = blinkTotalTime;
         StartCoroutine(BlinkCourutine(blinkColor));
     }

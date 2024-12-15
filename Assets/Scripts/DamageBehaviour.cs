@@ -1,10 +1,9 @@
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.Serialization;
 
 public class DamageBehaviour : MonoBehaviour
 {
-    [SerializeField] private float damage;
+    [SerializeField] private int damage;
     
     [SerializeField] private List<string> layersToDamage;
 

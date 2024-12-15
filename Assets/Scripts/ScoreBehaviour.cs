@@ -3,7 +3,7 @@ using UnityEngine.Events;
 
 public class ScoreBehaviour : MonoBehaviour
 {
-    public int score;
+    [HideInInspector] public int score;
     public UnityEvent<int> OnChangeScore;
 
     private void Start()

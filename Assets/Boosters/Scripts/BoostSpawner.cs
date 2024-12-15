@@ -43,8 +43,7 @@ public class BoostSpawner : MonoBehaviour
             CollectTimer();    
         }
     }
-
-    // ReSharper disable Unity.PerformanceAnalysis
+    
     private void SpawnTimer()
     {
         remainingTimeToSpawn -= Time.deltaTime;
@@ -96,5 +95,10 @@ public class BoostSpawner : MonoBehaviour
 
             remainingTimeToCollectBoost = timeToCollectBoost;
         }
+    }
+
+    public void ResetBoostSpawner()
+    {
+        isBoostSpawned = false;
     }
 }

@@ -1,18 +1,33 @@
+using System;
 using UnityEngine;
 
 public class Mover : MonoBehaviour
 {
+    [Header("Speed Values")]
     public float speed;
     public float rotationSpeed;
     
+    [Header("Limits Values")]
+    [SerializeField] ScreenLimits limits;
+    private Vector2 screenBounds;
+
+    private void Start()
+    {
+        if (limits != null)
+        {
+            screenBounds = limits.GetScreenLimitsSize() / 2f;
+        }
+        else
+        {
+            Debug.LogError("ScreenLimits no está asignado.");
+        }
+    }
+
     public void Move(Vector2 movementValues)
     {
-        // if (movementValues.y > 0)
-        // {
-        //     transform.position += transform.up * speed * Time.deltaTime;
-        // }
-        
         transform.position += new Vector3(movementValues.x, movementValues.y, 0f) * (speed * Time.deltaTime);
+        
+        RestrictToScreenBounds();
         
         Rotate(movementValues);
     }
@@ -25,5 +40,23 @@ public class Mover : MonoBehaviour
         float currentAngle = transform.eulerAngles.z;
         float smoothedAngle = Mathf.MoveTowardsAngle(currentAngle, targetAngle, rotationSpeed * Time.deltaTime);
         transform.rotation = Quaternion.Euler(0f, 0f, smoothedAngle);
+    }
+    
+    private void RestrictToScreenBounds()
+    {
+        try
+        {
+            Vector3 position = transform.position;
+        
+            position.x = Mathf.Clamp(position.x, -screenBounds.x, screenBounds.x);
+            position.y = Mathf.Clamp(position.y, -screenBounds.y, screenBounds.y);
+        
+            transform.position = position;
+        }
+        catch (Exception lim)
+        {
+            Debug.LogError(lim);
+            throw;
+        }
     }
 }

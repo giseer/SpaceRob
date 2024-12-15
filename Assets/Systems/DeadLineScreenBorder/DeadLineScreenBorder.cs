@@ -1,10 +1,9 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class DeadLineScreenBorder : MonoBehaviour
 {
+    [Header("Components")]
+    [SerializeField] ScreenLimits screenLimits;
     private BoxCollider2D boxCollider;
 
     [Header("DeadLine Values")] 
@@ -17,21 +16,7 @@ public class DeadLineScreenBorder : MonoBehaviour
 
     private void Start()
     {
-        if (Camera.main == null)
-        {
-            Debug.LogError("Camera.main is null");
-            return;    
-        }
-
-        Camera mainCamera = Camera.main;
-        
-        Vector2 topLeft = mainCamera.ViewportToWorldPoint(new Vector2(0, 1));
-        Vector2 bottomRight = mainCamera.ViewportToWorldPoint(new Vector2(1, 0));
-        
-        boxCollider.size = new Vector2(
-            (bottomRight.x - topLeft.x) + deadLineBorderOffsetFromScreen,
-            (topLeft.y - bottomRight.y)+ deadLineBorderOffsetFromScreen);
-        
+        screenLimits.ResizeCollider2DToScreenSize(boxCollider, deadLineBorderOffsetFromScreen, deadLineBorderOffsetFromScreen);
     }
 
     public void CleanEnemiesOnScreen()

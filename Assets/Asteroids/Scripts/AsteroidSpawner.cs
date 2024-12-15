@@ -1,9 +1,22 @@
+using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Serialization;
+
+
+[System.Serializable]
+public class AsteroidProbability
+{
+    public GameObject asteroidPrefab;
+    
+    [Tooltip("All the probabilities have to sum to 100.")]
+    [Range(0f, 100f)]
+    public float probability;
+}
 
 public class AsteroidSpawner : MonoBehaviour
 {
     public GameObject Player;
-    public GameObject AsteroidPrefab;
+    [SerializeField] private List<AsteroidProbability> asteroidsProbabilities = new List<AsteroidProbability>();
     public float delay;
     public bool active;
     public int NumAsteroides;
@@ -12,7 +25,6 @@ public class AsteroidSpawner : MonoBehaviour
 
     private float time;
 
-    // Start is called before the first frame update
     private void Start()
     {
         time = delay;
@@ -20,27 +32,65 @@ public class AsteroidSpawner : MonoBehaviour
         NumAstAct = 0;
     }
 
-    // Update is called once per frame
     private void Update()
     {
         if (active)
         {
-            Vector3 dir;
-            time += Time.deltaTime;
             if (time > delay)
+            {
                 if (NumAstAct < NumAsteroides)
                 {
-                    var asteroid = Instantiate(AsteroidPrefab, transform.position, Quaternion.identity);
-                    Destroy(asteroid, 12f);
+                    var asteroid = Instantiate(ChooseRandomAsteroid(), transform.position, Quaternion.identity, this.transform);
+                    
+                    Vector3 dir;
                     if (Player != null)
                         dir = Player.transform.position - asteroid.transform.position;
                     else
                         dir = new Vector3(Random.Range(-1.0f, 1.0f), Random.Range(-1.0f, 1.0f), 0);
-                    asteroid.GetComponent<Asteroid>().SetDirection(dir);
+                            
+                    Asteroid asteroidComponent = asteroid.GetComponent<Asteroid>();
+                    asteroidComponent.SetDirection(dir);
+                    asteroidComponent.OnAsteroidDestroyed.AddListener(OnAsteroidDestroyed);
+                        
                     time = 0;
                     NumAstAct++;
                 }
+            }
+            time += Time.deltaTime;
         }
+    }
+
+    private GameObject ChooseRandomAsteroid()
+    {
+        List<GameObject> asteroidsToChoose = new List<GameObject>();
+        
+        int randomNumber;
+        
+        do
+        {
+            randomNumber = Random.Range(0, 100);
+        
+            foreach (var asteroidProbability in asteroidsProbabilities)
+            {
+                if (randomNumber < asteroidProbability.probability)
+                {
+                    asteroidsToChoose.Add(asteroidProbability.asteroidPrefab);
+                }
+            }    
+            
+        } while (asteroidsToChoose.Count == 0);
+
+        if (asteroidsToChoose.Count == 1) return asteroidsToChoose[0];
+        
+        randomNumber = Random.Range(0, asteroidsToChoose.Count);
+        return asteroidsToChoose[randomNumber];
+
+    }
+
+    private void OnAsteroidDestroyed(Asteroid asteroid)
+    {
+        NumAstAct--;
+        asteroid.OnAsteroidDestroyed.RemoveListener(OnAsteroidDestroyed);
     }
 
     public void StopSpawner()

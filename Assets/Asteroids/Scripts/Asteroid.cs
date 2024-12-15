@@ -1,10 +1,13 @@
 using UnityEngine;
+using UnityEngine.Events;
 
 public class Asteroid : MonoBehaviour
 {
     private Vector3 dir;
 
     private IAMovement mvb;
+    
+    [HideInInspector] public UnityEvent<Asteroid> OnAsteroidDestroyed;
 
     private void Start()
     {
@@ -20,5 +23,10 @@ public class Asteroid : MonoBehaviour
     {
         dir = d;
         dir.Normalize();
+    }
+
+    private void OnDestroy()
+    {
+        OnAsteroidDestroyed.Invoke(this);
     }
 }
