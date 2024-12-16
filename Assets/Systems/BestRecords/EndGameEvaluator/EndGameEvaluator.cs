@@ -8,10 +8,15 @@ public class EndGameEvaluator : MonoBehaviour
     [SerializeField] private ScoreBehaviour scoreBehaviour;
     [SerializeField] private TimerBehaviour timerBehaviour;
     [SerializeField] private HealthBehaviour healthBehaviour;
+    [SerializeField] private AudioSource audioSource;
     
     [Header("Canvas")]
     [SerializeField] private GameObject completeCanvas;
     [SerializeField] private GameObject uncompleteCanvas;
+    
+    [Header("Fanfares")]
+    [SerializeField] private AudioClip completeFanfare;
+    [SerializeField] private AudioClip uncompleteFanfare;
     
     [Header("Canvas Fields")]
     [SerializeField] private TextMeshProUGUI newRecordText;
@@ -21,12 +26,20 @@ public class EndGameEvaluator : MonoBehaviour
     {
         if (isComplete)
         {
+            PlayEndGameSound(completeFanfare);
             CheckEndScore();
         }
         else
         {
+            PlayEndGameSound(uncompleteFanfare);
             CheckEndTime();
         }
+    }
+
+    private void PlayEndGameSound(AudioClip sound)
+    {
+        audioSource.clip = sound;
+        audioSource.Play();
     }
 
     private void CheckEndScore()
