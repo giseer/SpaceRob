@@ -360,15 +360,15 @@ MonoBehaviour:
       m_Calls: []
   m_text: GISEER GAMES
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 5c9433ea439f8074faf0b30d68c35538, type: 2}
-  m_sharedMaterial: {fileID: -4912708556679206191, guid: 5c9433ea439f8074faf0b30d68c35538, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 9e2eccd7518950943aeea0c5ad6520d5, type: 2}
+  m_sharedMaterial: {fileID: -6532888741839618443, guid: 9e2eccd7518950943aeea0c5ad6520d5, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4293055546
-  m_fontColor: {r: 0.22745098, g: 0.83137256, b: 0.8862745, a: 1}
+    rgba: 4283606527
+  m_fontColor: {r: 1, g: 0.64705884, b: 0.32156864, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -391,7 +391,7 @@ MonoBehaviour:
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
-  m_fontStyle: 0
+  m_fontStyle: 1
   m_HorizontalAlignment: 2
   m_VerticalAlignment: 512
   m_textAlignment: 65535
