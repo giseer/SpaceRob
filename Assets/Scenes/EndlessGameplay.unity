@@ -2723,6 +2723,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 81865a6e7f463a84eb0ff83979e81ece, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  normalModeSceneName: 
+  endlessModeSceneName: 
 --- !u!1 &1129862595
 GameObject:
   m_ObjectHideFlags: 0
@@ -5361,6 +5363,7 @@ MonoBehaviour:
   uncompleteFanfare: {fileID: 8300000, guid: eaa81bbe4b68ec540a0f4c7b862ebe61, type: 3}
   newRecordText: {fileID: 2088823791}
   newTimeText: {fileID: 25644895}
+  gameMode: 1
 --- !u!4 &2030491175
 Transform:
   m_ObjectHideFlags: 0

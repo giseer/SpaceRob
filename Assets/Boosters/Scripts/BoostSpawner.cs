@@ -11,7 +11,7 @@ public class BoostSpawner : MonoBehaviour
     
     private bool isBoostSpawned;
     
-    // Timers Values
+    [Header("Timer Values")]
     [SerializeField] private int timeToSpawn;
     [SerializeField] private float timeToCollectBoost;
     
@@ -59,15 +59,15 @@ public class BoostSpawner : MonoBehaviour
             switch(randInd)
             {
                 case 0:
-                    currentSpawnedBoost = Instantiate(SegundoDisparoPrefab, DesireRandomPosition(), Quaternion.identity);
+                    currentSpawnedBoost = Instantiate(SegundoDisparoPrefab, DesireRandomPosition(), Quaternion.identity, transform);
                     break;
 
                 case 1:
-                    currentSpawnedBoost = Instantiate(MasFrecuenciaPrefab, DesireRandomPosition(), Quaternion.identity);
+                    currentSpawnedBoost = Instantiate(MasFrecuenciaPrefab, DesireRandomPosition(), Quaternion.identity, transform);
                     break;
 
                 case 2:
-                    currentSpawnedBoost = Instantiate(InvulnerabilidadPrefab, DesireRandomPosition(), Quaternion.identity);
+                    currentSpawnedBoost = Instantiate(InvulnerabilidadPrefab, DesireRandomPosition(), Quaternion.identity, transform);
                     break;
             }
         }
@@ -100,5 +100,15 @@ public class BoostSpawner : MonoBehaviour
     public void ResetBoostSpawner()
     {
         isBoostSpawned = false;
+
+        CleanCurrentBoostsOnScreen();
+    }
+
+    private void CleanCurrentBoostsOnScreen()
+    {
+        for (int boostSpawnedIndex = 0; boostSpawnedIndex < transform.childCount; boostSpawnedIndex++)
+        {
+            Destroy(transform.GetChild(boostSpawnedIndex).gameObject);
+        }
     }
 }

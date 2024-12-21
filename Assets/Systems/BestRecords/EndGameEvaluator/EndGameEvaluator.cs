@@ -21,6 +21,9 @@ public class EndGameEvaluator : MonoBehaviour
     [Header("Canvas Fields")]
     [SerializeField] private TextMeshProUGUI newRecordText;
     [SerializeField] private TextMeshProUGUI newTimeText;
+
+    [Header("Values")] 
+    [SerializeField] private SaveSystem.GameMode gameMode;
     
     public void CheckEndGame(bool isComplete)
     {
@@ -46,9 +49,9 @@ public class EndGameEvaluator : MonoBehaviour
     {
         completeCanvas.SetActive(true);
         
-        if (SaveSystem.Instance.LoadGameData() != null)
+        if (SaveSystem.Instance.LoadGameData(gameMode) != null)
         {
-            IsNewRecord(scoreBehaviour.score > SaveSystem.Instance.LoadGameData().highScore);
+            IsNewRecord(scoreBehaviour.score > SaveSystem.Instance.LoadGameData(gameMode).highScore);
         }
         else
         {
@@ -67,7 +70,7 @@ public class EndGameEvaluator : MonoBehaviour
                 (int)timerBehaviour.time,
                 scoreBehaviour.score, 
                 healthBehaviour.currentHealth,
-                true));
+                true),gameMode);
         }
         else
         {
@@ -79,11 +82,11 @@ public class EndGameEvaluator : MonoBehaviour
     {
         uncompleteCanvas.SetActive(true);
         
-        if (SaveSystem.Instance.LoadGameData() != null)
+        if (SaveSystem.Instance.LoadGameData(gameMode) != null)
         {
             int gameTime = (int)Mathf.Round(timerBehaviour.initialTime - timerBehaviour.time);
 
-            IsNewTime(gameTime > SaveSystem.Instance.LoadGameData().highTime);
+            IsNewTime(gameTime > SaveSystem.Instance.LoadGameData(gameMode).highTime);
         }
         else
         {
@@ -102,7 +105,7 @@ public class EndGameEvaluator : MonoBehaviour
                 (int)Mathf.Round(timerBehaviour.initialTime - timerBehaviour.time),
                 scoreBehaviour.score, 
                 healthBehaviour.currentHealth,
-                false));
+                false),gameMode);
         }
         else
         {

@@ -142,6 +142,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fae207be813a24940a251d0186091b4a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  OnAsteroidDestroyed:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!114 &228279835686996715
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -154,7 +157,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 74a9680e9e4f3d94fa09100480e2e537, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 2
+  damage: 1
   layersToDamage:
   - Player
 --- !u!114 &7026855507332196385
@@ -194,7 +197,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bb7ef2ab3fe8ec9449f4c44856a0e620, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 1
+  maxHealth: 2
   currentHealth: 0
   invulnerable: 0
   OnDie:
