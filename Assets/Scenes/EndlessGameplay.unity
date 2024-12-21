@@ -2386,7 +2386,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1054705959
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2399,23 +2399,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: af34a93306824d8469012ba8b70cd867, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  initialTime: 60
-  countDown: 1
+  initialTime: 0
+  countDown: 0
   OnTime:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: TimeTextUpdater, Assembly-CSharp
-        m_MethodName: SetTimeText
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
   OnTimeOut:
     m_PersistentCalls:
       m_Calls:
@@ -2723,8 +2711,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 81865a6e7f463a84eb0ff83979e81ece, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  normalModeSceneName: 
-  endlessModeSceneName: 
 --- !u!1 &1129862595
 GameObject:
   m_ObjectHideFlags: 0
@@ -4740,18 +4726,6 @@ PrefabInstance:
       value: 645
       objectReference: {fileID: 0}
     - target: {fileID: 8170153791668043268, guid: 0d230cc8be529a542a08cb878ab14b18, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 0.67297
-      objectReference: {fileID: 0}
-    - target: {fileID: 8170153791668043268, guid: 0d230cc8be529a542a08cb878ab14b18, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 0.67297
-      objectReference: {fileID: 0}
-    - target: {fileID: 8170153791668043268, guid: 0d230cc8be529a542a08cb878ab14b18, type: 3}
-      propertyPath: m_LocalScale.z
-      value: 0.67297
-      objectReference: {fileID: 0}
-    - target: {fileID: 8170153791668043268, guid: 0d230cc8be529a542a08cb878ab14b18, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
       objectReference: {fileID: 0}
@@ -4810,7 +4784,7 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 8170153791668043268, guid: 0d230cc8be529a542a08cb878ab14b18, type: 3}
   m_PrefabInstance: {fileID: 1848556988}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1848556990 stripped
+--- !u!114 &1848556993 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 8170153791668043265, guid: 0d230cc8be529a542a08cb878ab14b18, type: 3}
   m_PrefabInstance: {fileID: 1848556988}
@@ -6027,7 +6001,7 @@ PrefabInstance:
     - target: {fileID: 1521669492, guid: cc6b499bc4cb8014392b3bd7680718f7, type: 3}
       propertyPath: joystick
       value: 
-      objectReference: {fileID: 1848556990}
+      objectReference: {fileID: 1848556993}
     - target: {fileID: 2078677554714824442, guid: cc6b499bc4cb8014392b3bd7680718f7, type: 3}
       propertyPath: m_TagString
       value: player

@@ -12,6 +12,7 @@ public class JoystickEditor : Editor
     private SerializedProperty snapX;
     private SerializedProperty snapY;
     protected SerializedProperty background;
+    protected SerializedProperty staticBackground;
     private SerializedProperty handle;
 
     protected Vector2 center = new Vector2(0.5f, 0.5f);
@@ -24,6 +25,7 @@ public class JoystickEditor : Editor
         snapX = serializedObject.FindProperty("snapX");
         snapY = serializedObject.FindProperty("snapY");
         background = serializedObject.FindProperty("background");
+        staticBackground = serializedObject.FindProperty("staticBackground");
         handle = serializedObject.FindProperty("handle");
     }
 
@@ -59,6 +61,7 @@ public class JoystickEditor : Editor
     protected virtual void DrawComponents()
     {
         EditorGUILayout.ObjectField(background, new GUIContent("Background", "The background's RectTransform component."));
+        EditorGUILayout.ObjectField(staticBackground, new GUIContent("Static Background", "The staticBackground's RectTransform component."));
         EditorGUILayout.ObjectField(handle, new GUIContent("Handle", "The handle's RectTransform component."));
     }
 }

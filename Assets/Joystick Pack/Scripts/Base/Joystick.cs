@@ -31,6 +31,7 @@ public class Joystick : MonoBehaviour, IPointerDownHandler, IDragHandler, IPoint
     [SerializeField] private bool snapX = false;
     [SerializeField] private bool snapY = false;
 
+    [SerializeField] protected RectTransform staticBackground = null;
     [SerializeField] protected RectTransform background = null;
     [SerializeField] private RectTransform handle = null;
     private RectTransform baseRect = null;

@@ -1,3 +1,4 @@
+using System;
 using TMPro;
 using UnityEngine;
 using UnityEngine.Serialization;
@@ -25,18 +26,22 @@ public class EndGameEvaluator : MonoBehaviour
     [Header("Values")] 
     [SerializeField] private SaveSystem.GameMode gameMode;
     
+    private bool _survived;
+    
     public void CheckEndGame(bool isComplete)
     {
-        if (isComplete)
-        {
-            PlayEndGameSound(completeFanfare);
-            CheckEndScore();
-        }
-        else
-        {
-            PlayEndGameSound(uncompleteFanfare);
-            CheckEndTime();
-        }
+        PlayEndGameSound(isComplete ? completeFanfare : uncompleteFanfare);
+        ShowEndCanvas(isComplete? completeCanvas : uncompleteCanvas);
+        
+        _survived = isComplete;
+        
+        CheckEndScore();
+        CheckEndTime();
+    }
+
+    private void ShowEndCanvas(GameObject canvasToShow)
+    {
+        canvasToShow.SetActive(true);
     }
 
     private void PlayEndGameSound(AudioClip sound)
@@ -47,8 +52,6 @@ public class EndGameEvaluator : MonoBehaviour
 
     private void CheckEndScore()
     {
-        completeCanvas.SetActive(true);
-        
         if (SaveSystem.Instance.LoadGameData(gameMode) != null)
         {
             IsNewRecord(scoreBehaviour.score > SaveSystem.Instance.LoadGameData(gameMode).highScore);
@@ -70,7 +73,7 @@ public class EndGameEvaluator : MonoBehaviour
                 (int)timerBehaviour.time,
                 scoreBehaviour.score, 
                 healthBehaviour.currentHealth,
-                true),gameMode);
+                _survived),gameMode);
         }
         else
         {
@@ -80,32 +83,42 @@ public class EndGameEvaluator : MonoBehaviour
 
     private void CheckEndTime()
     {
-        uncompleteCanvas.SetActive(true);
-        
         if (SaveSystem.Instance.LoadGameData(gameMode) != null)
         {
-            int gameTime = (int)Mathf.Round(timerBehaviour.initialTime - timerBehaviour.time);
-
-            IsNewTime(gameTime > SaveSystem.Instance.LoadGameData(gameMode).highTime);
+            int gameTime;
+            
+            switch (gameMode)
+            {
+                case SaveSystem.GameMode.Normal:
+                    gameTime = (int)Mathf.Round(timerBehaviour.initialTime - timerBehaviour.time);
+                    
+                    IsNewTime(gameTime > SaveSystem.Instance.LoadGameData(gameMode).highTime, gameTime);       
+                    break;
+                case SaveSystem.GameMode.Endless:
+                    gameTime = (int)timerBehaviour.time;
+                    
+                    IsNewTime(gameTime > SaveSystem.Instance.LoadGameData(gameMode).highTime, gameTime);
+                    break;
+            }
         }
         else
         {
-            IsNewTime(true);   
+            IsNewTime(true, (int)timerBehaviour.time);   
         }
     }
     
-    private void IsNewTime(bool isNewTime)
+    private void IsNewTime(bool isNewTime, int newTime)
     {
         if (isNewTime)
         {
-            newTimeText.text = $"New Time: {Mathf.Round(timerBehaviour.initialTime - timerBehaviour.time)} seconds";
+            newTimeText.text = $"New Time: {newTime} seconds";
             newTimeText.gameObject.SetActive(true);
             
             SaveSystem.Instance.SaveGameData(new GameData(
-                (int)Mathf.Round(timerBehaviour.initialTime - timerBehaviour.time),
+                newTime,
                 scoreBehaviour.score, 
                 healthBehaviour.currentHealth,
-                false),gameMode);
+                _survived),gameMode);
         }
         else
         {
