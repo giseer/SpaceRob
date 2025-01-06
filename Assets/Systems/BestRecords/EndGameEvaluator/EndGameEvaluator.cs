@@ -36,6 +36,7 @@ public class EndGameEvaluator : MonoBehaviour
         _survived = isComplete;
         
         CheckEndScore();
+        
         CheckEndTime();
     }
 
@@ -52,13 +53,18 @@ public class EndGameEvaluator : MonoBehaviour
 
     private void CheckEndScore()
     {
-        if (SaveSystem.Instance.LoadGameData(gameMode) != null)
+        GameData gameData = SaveSystem.Instance.LoadGameData(gameMode);
+        
+        if (gameData != null)
         {
-            IsNewRecord(scoreBehaviour.score > SaveSystem.Instance.LoadGameData(gameMode).highScore);
+            IsNewRecord(scoreBehaviour.score > gameData.highScore);
         }
         else
         {
-            IsNewRecord(true);   
+            if (scoreBehaviour.score > 0)
+            {
+                IsNewRecord(true);       
+            }
         }
     }
     
@@ -66,7 +72,7 @@ public class EndGameEvaluator : MonoBehaviour
     {
         if (isNewRecord)
         {
-            newRecordText.text = $"New record: {scoreBehaviour.score}";
+            newRecordText.text = $"New record: {scoreBehaviour.score} points";
             newRecordText.gameObject.SetActive(true);
             
             SaveSystem.Instance.SaveGameData(new GameData(
@@ -83,23 +89,27 @@ public class EndGameEvaluator : MonoBehaviour
 
     private void CheckEndTime()
     {
-        if (SaveSystem.Instance.LoadGameData(gameMode) != null)
+        GameData gameData = SaveSystem.Instance.LoadGameData(gameMode);
+        
+        if (gameData != null)
         {
             int gameTime;
-            
-            switch (gameMode)
+
+            if (gameMode == SaveSystem.GameMode.Normal)
             {
-                case SaveSystem.GameMode.Normal:
-                    gameTime = (int)Mathf.Round(timerBehaviour.initialTime - timerBehaviour.time);
-                    
-                    IsNewTime(gameTime > SaveSystem.Instance.LoadGameData(gameMode).highTime, gameTime);       
-                    break;
-                case SaveSystem.GameMode.Endless:
-                    gameTime = (int)timerBehaviour.time;
-                    
-                    IsNewTime(gameTime > SaveSystem.Instance.LoadGameData(gameMode).highTime, gameTime);
-                    break;
+                gameTime = (int)Mathf.Round(timerBehaviour.initialTime - timerBehaviour.time);
             }
+            else if (gameMode == SaveSystem.GameMode.Endless)
+            {
+                gameTime = (int)timerBehaviour.time;
+            }
+            else
+            {
+                Debug.LogError("GameMode no exists");
+                gameTime = 0;
+            }
+            
+            IsNewTime(gameTime > gameData.highTime, gameTime);     
         }
         else
         {
