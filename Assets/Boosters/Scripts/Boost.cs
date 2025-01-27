@@ -51,7 +51,7 @@ public class Boost : MonoBehaviour
         BoostUIpdater.Instance.activeBoost = this;
     }
 
-    protected virtual void RemoveBoost()
+    public virtual void RemoveBoost()
     {
         boostActivated = false;
         BoostUIpdater.Instance.activeBoost = null;

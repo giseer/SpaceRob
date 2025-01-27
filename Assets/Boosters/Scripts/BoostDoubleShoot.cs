@@ -11,7 +11,7 @@ public class BoostDoubleShoot : Boost
         base.ApplyBoost();
     }
 
-    protected override void RemoveBoost()
+    public override void RemoveBoost()
     {
         lastShipHitted.GetComponentInChildren<Shooter>().doubleShootActivated = false;
         

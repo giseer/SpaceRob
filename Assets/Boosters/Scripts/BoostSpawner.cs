@@ -108,7 +108,14 @@ public class BoostSpawner : MonoBehaviour
     {
         for (int boostSpawnedIndex = 0; boostSpawnedIndex < transform.childCount; boostSpawnedIndex++)
         {
-            Destroy(transform.GetChild(boostSpawnedIndex).gameObject);
+            Boost boost = transform.GetChild(boostSpawnedIndex).GetComponentInChildren<Boost>();
+            
+            if (boost.boostActivated)
+            {
+                boost.RemoveBoost();
+            }
+            
+            Destroy(boost.gameObject);
         }
     }
 }

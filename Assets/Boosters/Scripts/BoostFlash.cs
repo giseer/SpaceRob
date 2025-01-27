@@ -10,8 +10,8 @@ public class BoostFlash : Boost
             
             base.ApplyBoost();
     }
-
-    protected override void RemoveBoost()
+    
+    public override void RemoveBoost()
     {
         lastShipHitted.GetComponentInChildren<Mover>().speed = previousSpeed;
         
